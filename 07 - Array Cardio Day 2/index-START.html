@@ -27,12 +27,12 @@
 
       // Some and Every Checks
       // Array.prototype.some() // is at least one person 19 or older?
-      const isAnyoneOver19 = people.some(person => 2025 - person.year >= 19);
-      console.log(isAnyoneOver19);
+      const isAnyoneAdult = people.some(person => 2025 - person.year >= 19);
+      console.log(isAnyoneAdult);
 
       // Array.prototype.every() // is everyone 19 or older?
-      const isEveryoneOver19 = people.every(person => 2025 - person.year >= 19);
-      console.log(isEveryoneOver19);
+      const isEveryoneAdult = people.every(person => 2025 - person.year >= 19);
+      console.log(isEveryoneAdult);
 
       // Array.prototype.find()
       // Find is like filter, but instead returns just the one you are looking for
@@ -49,6 +49,12 @@
 
       // delete the comment with the ID of 823423
       comments.splice(commentToDeleteIdx, 1);
+
+      // Alternative way of solving this
+      // const newComments = [
+      //   ...comments.slice(0, commentToDeleteIdx), // from start of array to before the comment we want to delete
+      //   ...comments.slice(commentToDeleteIdx + 1), // from after the comment we want to delete to the end
+      // ]
 
       console.log(comments);
     </script>
